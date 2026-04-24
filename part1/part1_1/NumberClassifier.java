@@ -13,7 +13,11 @@ public class NumberClassifier {
         // TODO: верните категорию для number по условию задания.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
         if (number < 0) return "< 0";
-        return "TODO";
+        if (number == 0) return " = 0";
+        if (number <= 9) return "однозначеное";
+        if (number <= 99) return "двузначное";
+        if (number <= 999) return "трезначное";
+        return "Большое число";
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 

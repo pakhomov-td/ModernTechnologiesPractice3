@@ -26,14 +26,27 @@ public class Zoo {
     public List<Animal> getHungryAnimals() {
         // TODO: верните животных с energyLevel < 30.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return new ArrayList<>();
+        List<Animal> golod = new ArrayList<>();
+        for (Animal a : animals) {
+            if (a.getEnergyLevel() < 30) {
+                golod.add(a);
+            }
+        }
+        return golod;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public Optional<Animal> findAnimal(String name) {
         // TODO: найдите животное по имени (без учета регистра).
         // ▼ ВАШ КОД ЗДЕСЬ ▼
+
+        for (Animal a : animals) {
+            if (a.getName().toLowerCase().equals(name.toLowerCase())) {
+                return Optional.of(a);
+            }
+        }
         return Optional.empty();
+
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }

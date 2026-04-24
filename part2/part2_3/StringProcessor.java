@@ -6,7 +6,14 @@ public class StringProcessor {
     public static int countVowels(String text) {
         // TODO: посчитайте русские и английские гласные.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return -1;
+        int count = 0;
+        String LT = text.toLowerCase();
+        for (int i = 0; i < LT.length(); i++) {
+            if (VOWELS.indexOf(LT.charAt(i)) != -1) {
+                count++ ;
+            }
+        }
+        return count;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -14,21 +21,47 @@ public class StringProcessor {
         // TODO: палиндром без учета регистра и знаков препинания.
         // Подсказка: сравнение символов с двух концов.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return false;
+        String clean = text.toLowerCase();
+        int lt = 0;
+        int rt = clean.length() - 1;
+        while (lt < rt) {
+            if (clean.charAt(lt) != clean.charAt(rt)) {
+                return false;
+            }
+            lt++;
+            rt--;
+        }
+        return true;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static String reverse(String text) {
         // TODO: реверс без StringBuilder.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "";
+        char[] chars = text.toCharArray();
+        int lt = 0, rt = chars.length - 1;
+        while (lt < rt) {
+            char var_ch = chars[lt];
+            chars[lt] = chars[rt];
+            chars[rt] = var_ch;
+            lt++;
+            rt--;
+        }
+        return new String(chars);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static String findLongestWord(String sentence) {
         // TODO: найдите самое длинное слово.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "";
+        String[] words = sentence.split("[\\s,.-]+");
+        String bgi_word = "";
+        for (String word : words) {
+            if (word.length() > bgi_word.length()) {
+                bgi_word = word;
+            }
+        }
+        return bgi_word;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 

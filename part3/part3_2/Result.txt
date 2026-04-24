@@ -1,0 +1,11 @@
+Банковская система инициализирована
+Банк: Java Bank
+BankAccount{RU-123, owner=Ivan Petrov, balance=more 100000}
+Снятие (неверный PIN): false
+Снятие (верный PIN): true
+BankAccount{RU-123, owner=Ivan Petrov, balance=more 100000}
+Снятие (неверный PIN): false
+Снятие (неверный PIN): false
+Снятие (неверный PIN): false
+Снятие (верный PIN): false
+BankAccount{RU-123, owner=Ivan Petrov, balance=more 100000} [ЗАБЛОКИРОВАН]
